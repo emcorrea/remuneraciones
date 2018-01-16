@@ -9,7 +9,7 @@ $(document).ready(function(){
 		}else{
 			$.ajax({
 				 method:'POST',
-                url:'../../sistema_remuneraciones/controlador/php/ajax-historial.php',
+                url:'../../remuneraciones/controlador/php/ajax-historial.php',
                 data:$("#formulariohistorial").serialize(),
                 success:function(data){
                     $("#formulariohistorial")[0].reset();

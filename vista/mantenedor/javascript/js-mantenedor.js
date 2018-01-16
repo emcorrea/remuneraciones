@@ -43,7 +43,7 @@ $(document).ready(function(){
         }else{
             $.ajax({
                 method:'POST',
-                url:'../../sistema_remuneraciones/controlador/php/ajax-mantenedor-usuario.php',
+                url:'../../remuneraciones/controlador/php/ajax-mantenedor-usuario.php',
                 data:$("#mantenedorusuario").serialize(),
                 success:function(data){
                     alert("Usuarios registrado correctamente");
@@ -85,7 +85,7 @@ $(document).ready(function(){
         }else{
             $.ajax({
                 method:'POST',
-                url:'../../sistema_remuneraciones/controlador/php/ajax-mantenedor-costo.php',
+                url:'../../remuneraciones/controlador/php/ajax-mantenedor-costo.php',
                 data:$("#mantenedortipocosto").serialize(),
                 success:function(data){
                     alert("Tipo costo agregado correctamente");
@@ -108,7 +108,7 @@ tipos de costo, según lo que se seleccione en el select*/
 function mostar_tabla(codigo_tipo_costo){
     $.ajax({
         method: 'POST', 
-        url: '../../sistema_remuneraciones/controlador/php/ajax-contenidotipocosto.php', 
+        url: '../../remuneraciones/controlador/php/ajax-contenidotipocosto.php', 
         data: {funcion_tipo_costo: 'tipo_costo', codigo_tipo_costo: codigo_tipo_costo},
         success: function(respuesta){
             var n = 1,
@@ -149,7 +149,7 @@ function mostar_tabla(codigo_tipo_costo){
 function activoCheck(){
     $.ajax({
         method:'POST',
-        url:'../../sistema_remuneraciones/controlador/php/ajax-mantenedor-costo.php',
+        url:'../../remuneraciones/controlador/php/ajax-mantenedor-costo.php',
         data:$("#costoActivo").serialize(),
         success:function(data){
             alert("Tipo costo actualizado");

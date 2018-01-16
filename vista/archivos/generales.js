@@ -22,7 +22,7 @@ $(document).ready(function(){
 
     //Redirecciona para salir
     $("#salir").click(function() {
-        location.href="../../sistema_remuneraciones/controlador/login/salir.php";
+        location.href="../../remuneraciones/controlador/login/salir.php";
     });
     
 });

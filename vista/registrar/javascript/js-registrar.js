@@ -14,7 +14,7 @@ $(document).ready(function(){
 		}else{
 			$.ajax({
                 method:'POST',
-                url:'../../sistema_remuneraciones/controlador/php/ajax-registrar.php',
+                url:'../../remuneraciones/controlador/php/ajax-registrar.php',
                 data:$("#registrarremuneracion").serialize(),
                 success:function(data){
                     alert("Reumneración registrada");
