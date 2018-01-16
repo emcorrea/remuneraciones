@@ -129,9 +129,9 @@ function mostar_tabla(codigo_tipo_costo){
                         +'<td class="td">'+ datos[i].nombre_detalle +'</td>'
                         +'<td class="td">$'+ datos[i].valor +'</td>';
                 if(datos[i].activo == 1){
-                    html += '<td class="td"><input type="checkbox" name="codigodetalle" id="activo" value='+datos[i].codigo_detalle+' checked onclick="activoCheck()"></td>';    
+                    html += '<td class="td"><input type="checkbox" name="codigodetalle" id="activo" value='+datos[i].codigo_detalle+' checked onclick="activoCheck('+this.value+')"></td>';    
                 }else{
-                    html += '<td class="td"><input type="checkbox" name="codigodetalle" id="activo" value='+datos[i].codigo_detalle+' onclick="activoCheck()"></td>';
+                    html += '<td class="td"><input type="checkbox" name="codigodetalle" id="activo" value='+datos[i].codigo_detalle+' onclick="activoCheck('+this.value+')"></td>';
                 }
                         
             }
@@ -146,11 +146,11 @@ function mostar_tabla(codigo_tipo_costo){
     });
 }
 
-function activoCheck(){
+function activoCheck(codigo_detalle){
     $.ajax({
         method:'POST',
         url:'../../remuneraciones/controlador/php/ajax-mantenedor-costo.php',
-        data:$("#costoActivo").serialize(),
+        data:{funcion_codigo_detalle: 'detalle', codigo_detalle: codigo_detalle},
         success:function(data){
             alert("Tipo costo actualizado");
         }
