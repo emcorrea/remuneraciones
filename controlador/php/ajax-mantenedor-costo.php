@@ -16,15 +16,11 @@ if(isset($_POST['tipocosto']) && isset($_POST['detalletipocosto']) && isset($_PO
 	$objtipoCosto->grabaTipoCosto($rut,$tipoCosto,$detalle,$valor);
 
 
-}else if(isset($_POST['funcion_codigo_detalle'])){
+}else if(isset($_POST['codigodetalle'])){
 	//VARIABLES
+	$codigodetalle 		= $_POST['codigodetalle'];
 
-	switch($_POST['funcion_codigo_detalle']){
-	        case 'detalle':
-	        	$codigodetalle 		= $_POST['codigo_detalle'];
-	           	$objtipoCosto->activoTipoCosto($codigodetalle);
-	        break;
-		}
+	$objtipoCosto->activoTipoCosto($codigodetalle);
 }else{
 	echo"No se pudo ejecutar la acción";
 }
