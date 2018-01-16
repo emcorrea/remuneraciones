@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+}
+
+.formulariologin{
+    margin: auto;
+    width: 50%;
+    max-width: 500px;
+    background: #FBFCFC;
+    padding: 30px;
+    border: 1px solid #D4AC0D;
+    border-radius: 3px;
+}
+
+h2{
+    color:#D4AC0D;
+    font-family: Arial;
+    border-bottom: 1px solid;
+}
+
+small{
+    color:#B2BABB;
+    font-family: Georgia;
+    font-size: 18px;
+}
+
+.input-text{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin: 30px 0;
+    font-size: 15px;
+    color: #626567;
+    border: 1px solid #909497;
+    border-radius: 5px;
+    padding-left: 40px;
+}
+
+.input-text:focus {
+    box-shadow: 0 0 5px #909497;
+    border:1px solid #909497;
+}
+
+.contenido-input{
+    position: relative;
+}
+
+.ingresar[type="submit"]{
+    background: linear-gradient(#F1C40F, #F1C40F);
+    border: 0;
+    color: #FDFEFE;
+    opacity: 0.8;
+    cursor: pointer;
+    border: 1px solid #F1C40F;
+    border-radius: 5px;
+    margin-bottom: 0;
+    width: 440px;
+    height: 30px;
+    font-size: 17px;
+}
+
+.ingresar[type="submit"]:hover{
+    opacity: 1;
+}
+
+.ingresar[type="submit"]:active{
+    transform: scale(0.95);
+}
+
+@media (max-width:768px){
+    form{
+        width:75%;
+    }
+}
+
+@media (max-width:480px){
+    form{
+        width:95%;
+    }
+}
