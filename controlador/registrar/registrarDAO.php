@@ -20,7 +20,8 @@ class registrar implements interfazRegistrarDAO{
 				DETALLE_TIPO_COSTO 
 			WHERE
 				rut_persona = ? AND 
-				codigo_tipo_costo = 1");
+				codigo_tipo_costo = 1 AND
+				activo = 1");
 			$sql->execute(array($rut));
 			$n = 0;
 
@@ -72,7 +73,8 @@ class registrar implements interfazRegistrarDAO{
 				DETALLE_TIPO_COSTO 
 			WHERE
 				rut_persona = ? AND
-				codigo_tipo_costo = 2");
+				codigo_tipo_costo = 2 AND
+				activo = 1");
 			$sql->execute(array($rut));
 			$n = 0;
 

@@ -147,14 +147,13 @@ function mostar_tabla(codigo_tipo_costo){
 }
 
 function activoCheck(valor){
-    alert(valor);
-    /*$.ajax({
-        method:'POST',
-        url:'../../remuneraciones/controlador/php/ajax-mantenedor-costo.php',
+    $.ajax({
+        method:'GET',
+        url:'../../remuneraciones/controlador/php/ajax-mantenedor-costo.php?valor='+valor,
         data:$("#costoActivo").serialize(),
         success:function(data){
             alert("Tipo costo actualizado");
         }
-    });*/
+    });
 }
 

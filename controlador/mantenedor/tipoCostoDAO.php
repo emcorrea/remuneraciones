@@ -43,30 +43,32 @@ class mantenedorTipoCosto implements interfazTipoCostoDAO{
 		}
 	}
 
-	function activoTipoCosto($codigoDetalle){
+	function activoTipoCosto($codigodetalle){
 		try {
+
 			$conexion = new DBconexion();
 			
 			$sql="SELECT * FROM DETALLE_TIPO_COSTO WHERE codigo_detalle = :tipoCosto";
 			$resultado = $conexion->prepare($sql);
-			$resultado->execute(array(':tipoCosto'=>$codigoDetalle));
+			$resultado->execute(array(':tipoCosto'=>$codigodetalle));
 			while ($fila = $resultado->fetch()){
 				$activo = $fila['activo'];
 				if($activo == 1){
-					$sql="UPDATE DETALLE_TIPO_COSTO SET activo = 0 WHERE codigo_detalle = ':codigo_detalle'";
-					$resultado = $conexion->prepare($sql);
-					$resultado->execute(array(':codigo_detalle'=>$codigoDetalle));
+					$sqlUp="UPDATE DETALLE_TIPO_COSTO SET activo = 0 WHERE codigo_detalle = ?";
+					$resultadoUp = $conexion->prepare($sqlUp);
+					$resultadoUp->execute(array($codigodetalle));
+					echo"Se ha deshabilitado";
 				}else{
-					$sql="UPDATE DETALLE_TIPO_COSTO SET activo = 1 WHERE codigo_detalle = ':codigo_detalle'";
-					$resultado = $conexion->prepare($sql);
-					$resultado->execute(array(':codigo_detalle'=>$codigoDetalle));
+					$sqlUp="UPDATE DETALLE_TIPO_COSTO SET activo = 1 WHERE codigo_detalle = ?";
+					$resultadoUp = $conexion->prepare($sqlUp);
+					$resultadoUp->execute(array($codigodetalle));
+					echo"Se ha habilitado";
 				}
 			}
 		} catch (Exception $e) {
 			echo"No se pudo instanciar a la funcion grabaTipoCosto: ".$e;
 		}
 	}
-
 
 }
 

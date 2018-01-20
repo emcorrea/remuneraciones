@@ -1,5 +1,4 @@
 <?php
-
 include_once __DIR__.'/../../modelo/conexion.php';
 include_once __DIR__.'/../mantenedor/tipoCostoDAO.php';
 
@@ -16,9 +15,9 @@ if(isset($_POST['tipocosto']) && isset($_POST['detalletipocosto']) && isset($_PO
 	$objtipoCosto->grabaTipoCosto($rut,$tipoCosto,$detalle,$valor);
 
 
-}else if(isset($_POST['codigodetalle'])){
+}else if(isset($_GET['valor'])){
 	//VARIABLES
-	$codigodetalle 		= $_POST['codigodetalle'];
+	$codigodetalle 		= $_GET['valor'];
 
 	$objtipoCosto->activoTipoCosto($codigodetalle);
 }else{
