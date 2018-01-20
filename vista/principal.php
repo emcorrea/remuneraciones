@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION["usuario"])){
-    header("location:../../sistema_remuneraciones/vista/login/inicio.php");
+    header("location:../../remuneraciones/vista/login/inicio.php");
 }
 ?>
 <!DOCTYPE html>
